@@ -1,9 +1,6 @@
 from unittest import TestCase
-from .task1 import findCircularPath, getIndex
 
-
-def getIndex(index: int, current_index: int, length: int) -> int:
-    return (length + current_index) % index - 1
+from task1 import findCircularPath, getIndex
 
 
 class TestGetIndex(TestCase):
@@ -30,6 +27,7 @@ class TestGetIndex(TestCase):
         self.assertEqual(0, getIndex(5, 2, 4))
 
     def test_findCircularPath(self):
+        self.assertEqual('0', findCircularPath(0, 5))
         self.assertEqual('1', findCircularPath(1, 5))
-        self.assertEqual('14253.', findCircularPath(5, 4))
+        self.assertEqual('14253', findCircularPath(5, 4))
         self.assertEqual('13', findCircularPath(4, 3))

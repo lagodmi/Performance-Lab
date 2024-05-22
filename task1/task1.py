@@ -3,6 +3,8 @@ def getIndex(index: int, current_index: int, length: int) -> int:
 
 
 def findCircularPath(n: int, m: int) -> str:
+    if n in (0, 1):
+        return str(n)
     res = '1'
     massive: list[str] = [str(i) for i in range(1, n+1)]
     current_index = 0
