@@ -17,10 +17,9 @@ def findCircularPath(n: int, m: int) -> str:
 
 
 def main():
-    while True:
-        print("Введите длину массива и длину обхода через пробел:")
-        n, m = map(int, input().split())
-        print(findCircularPath(n, m))
+    n, m = map(int, input(
+        "Введите длину массива и длину обхода через пробел:").split())
+    print(findCircularPath(n, m))
 
 
 if __name__ == '__main__':

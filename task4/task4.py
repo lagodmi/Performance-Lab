@@ -1,6 +1,3 @@
-import time
-
-
 def getArray(path: str) -> list[int]:
     with open(path, 'r') as file:
         return [int(i) for i in file.read().split()]
@@ -25,7 +22,7 @@ def equalityTest(array: list[int]) -> bool:
 
 
 def main():
-    path: str = input("Введите путь к файлу:")  # путь к файлу
+    path: str = input("Введите путь к файлу: ")  # путь к файлу
     array: list[int] = getArray(path)  # получаем массив из файла
     res: bool = equalityTest(array)  # проверяем равенство элементов массива
     counter: int = 0  # счетчик количества перестановок массива
@@ -36,8 +33,6 @@ def main():
         res = equalityTest(new_array)  # проверяем равенство
         array = new_array  # перезаписываем массив
         counter += 1
-        time.sleep(1)
-        print(new_array)
     print(counter)
 
 

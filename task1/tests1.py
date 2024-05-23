@@ -3,9 +3,8 @@ from unittest import TestCase
 from task1 import findCircularPath, getIndex
 
 
-class TestGetIndex(TestCase):
+class TestTask1(TestCase):
     def test_getIndex(self):
-        # self.assertEqual(0, getIndex(0, 5))
         self.assertEqual(-1, getIndex(1, 0, 5))
 
         self.assertEqual(0, getIndex(2, 0, 5))
