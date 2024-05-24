@@ -12,31 +12,30 @@ def is_point_inside_circle(
     x: float,
     y: float,
     radius: float,
-    points: list[tuple[float, float]]
+    point_x: float,
+    point_y: float,
 ) -> int:
-    point_x: float
-    point_y: float
-
-    for point in points:
-        point_x, point_y = point
-        distance = (point_x - x)**2 + (point_y - y)**2
-        if distance < radius**2:
-            print(point_x, point_y, distance, 1)  # Точка внутри окружности
-        elif distance == radius**2:
-            print(point_x, point_y, distance, 0)  # Точка лежит на окружности
-        else:
-            print(point_x, point_y, distance, 2)  # Точка вне окружности
+    distance = (point_x - x)**2 + (point_y - y)**2
+    if distance < radius**2:
+        return 1  # Точка внутри окружности
+    elif distance == radius**2:
+        return 0  # Точка лежит на окружности
+    else:
+        return 2  # Точка вне окружности
 
 
 def main():
     x: float
     y: float
     radius: float
-    path: str = input("Введите путь к файлу с координатами: ")  # путь к файлу
+    path: str = input(
+        "Введите путь к файлу с координатами центра окружности и его радиусом: ")  # путь к файлу
     x, y, radius = getXYR(path)  # получаем координаты и радиус
     path_points: list = input("Введите путь к файлу с точками: ")
     points = getPoints(path_points)  # получаем точки
-    is_point_inside_circle(x, y, radius, points)
+    for point in points:
+        point_x, point_y = point
+        print(is_point_inside_circle(x, y, radius, point_x, point_y))
 
 
 if __name__ == '__main__':

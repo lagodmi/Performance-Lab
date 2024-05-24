@@ -14,6 +14,6 @@ class TestTask2(TestCase):
         self.assertEqual(getPoints(self.path_points), [(0, 0), (1, 6), (6, 6)])
 
     def test_is_point_inside_circle(self):
-        self.assertEqual(is_point_inside_circle(1, 1, 5, [(0, 0)]), 1)
-        self.assertEqual(is_point_inside_circle(1, 1, 5, [(1, 6)]), 0)
-        self.assertEqual(is_point_inside_circle(1, 1, 5, [(6, 6)]), 2)
+        self.assertEqual(is_point_inside_circle(1, 1, 5, 0, 0), 1)
+        self.assertEqual(is_point_inside_circle(1, 1, 5, 1, 6), 0)
+        self.assertEqual(is_point_inside_circle(1, 1, 5, 6, 6), 2)
