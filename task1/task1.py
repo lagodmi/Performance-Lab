@@ -1,5 +1,5 @@
 def getIndex(index: int, current_index: int, length: int) -> int:
-    return (length + current_index) % index - 1
+    return (length + current_index - 1) % index
 
 
 def findCircularPath(n: int, m: int) -> str:
